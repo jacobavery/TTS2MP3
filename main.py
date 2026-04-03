@@ -1184,6 +1184,8 @@ class TTS2MP3App:
         custom      = (self.speed_var.get() != 0 or self.pitch_var.get() != 0
                        or self.volume_var.get() != 0)
 
+        v_backend = voice.get("Backend", "edge_tts")
+
         def do_preview():
             tmp = None
             try:
@@ -1193,12 +1195,17 @@ class TTS2MP3App:
                     t = tempfile.NamedTemporaryFile(suffix=".mp3", delete=False)
                     t.close()
                     tmp = t.name
-                    run_async(edge_tts.Communicate(
-                        preview_text, vname,
-                        rate=f"{self.speed_var.get():+d}%",
-                        pitch=f"{self.pitch_var.get():+d}Hz",
-                        volume=f"{self.volume_var.get():+d}%",
-                    ).save(tmp))
+                    rate  = f"{self.speed_var.get():+d}%"
+                    pitch = f"{self.pitch_var.get():+d}Hz"
+                    vol   = f"{self.volume_var.get():+d}%"
+                    if v_backend == "macos":
+                        self._synthesize_macos(preview_text, vname, tmp,
+                                               rate=rate, pitch=pitch, volume=vol)
+                    else:
+                        run_async(edge_tts.Communicate(
+                            preview_text, vname,
+                            rate=rate, pitch=pitch, volume=vol,
+                        ).save(tmp))
                     play = tmp
 
                 # Another voice was selected while we were downloading — don't play
@@ -3226,8 +3233,19 @@ class TTS2MP3App:
         cache_mp3  = self._conv_cache_path(key)
         from_cache = os.path.isfile(cache_mp3) and os.path.getsize(cache_mp3) > 0
 
+        self._conv_start_t = time.time()
+
         def progress_cb(pct):
             self.root.after(0, self._update_progress, pct)
+            if pct > 5 and not from_cache:
+                elapsed = time.time() - self._conv_start_t
+                remaining = elapsed / (pct / 100) - elapsed
+                if remaining >= 60:
+                    eta = f"~{int(remaining / 60)}m {int(remaining % 60)}s remaining"
+                else:
+                    eta = f"~{int(remaining)}s remaining"
+                self.root.after(0, self.status_var.set,
+                                f"Converting… {pct}%  ({eta})")
 
         try:
             self._convert_to_audio_file(
@@ -4155,10 +4173,14 @@ class TTS2MP3App:
                             suffix=".mp3", delete=False)
                         t.close()
                         tmp = t.name
-                        run_async(edge_tts.Communicate(
-                            sample, vname,
-                            rate=rate, pitch=pitch, volume=vol
-                        ).save(tmp))
+                        if v.get("Backend", "edge_tts") == "macos":
+                            self._synthesize_macos(sample, vname, tmp,
+                                                   rate=rate, pitch=pitch, volume=vol)
+                        else:
+                            run_async(edge_tts.Communicate(
+                                sample, vname,
+                                rate=rate, pitch=pitch, volume=vol
+                            ).save(tmp))
 
                         if os.path.isfile(tmp) and os.path.getsize(tmp) > 0:
                             # Clean up old preview
