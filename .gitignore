@@ -1,0 +1,29 @@
+# Runtime data
+.tts_cache/
+.tts_favorites.json
+.tts_settings.json
+.tts_pronunciations.json
+.tts_history.json
+
+# Project files (user-specific)
+*.tts2mp3
+
+# IDE
+.idea/
+.vscode/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+*.egg-info/
+dist/
+build/
+
+# Claude Code
+.claude/
+
+# macOS
+.DS_Store
