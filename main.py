@@ -16,7 +16,11 @@ from striprtf.striprtf import rtf_to_text
 import ebooklib
 from ebooklib import epub as _epub
 from bs4 import BeautifulSoup
-import fitz  # PyMuPDF
+try:
+    import fitz  # PyMuPDF
+    _HAS_FITZ = True
+except (ImportError, OSError):
+    _HAS_FITZ = False
 
 try:
     from tkinterdnd2 import TkinterDnD, DND_FILES
@@ -1727,6 +1731,8 @@ class TTS2MP3App:
     @staticmethod
     def _pdf_file_to_text(path):
         """Extract plain text from a PDF using PyMuPDF."""
+        if not _HAS_FITZ:
+            raise RuntimeError("PDF support requires PyMuPDF (pip install PyMuPDF)")
         doc   = fitz.open(path)
         parts = []
         for page in doc:
@@ -1741,6 +1747,8 @@ class TTS2MP3App:
     @staticmethod
     def _pdf_metadata(path):
         """Return {title, author, pages} dict for display."""
+        if not _HAS_FITZ:
+            return {"title": os.path.basename(path), "author": "Unknown", "pages": 0}
         doc  = fitz.open(path)
         meta = doc.metadata or {}
         pages = doc.page_count
@@ -4407,6 +4415,8 @@ class TTS2MP3App:
 
     def _ocr_pdf(self, path):
         """Run tesseract OCR on each page of a PDF and return extracted text."""
+        if not _HAS_FITZ:
+            return ""
         text_parts = []
         try:
             doc = fitz.open(path)

@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TTS2MP3 Studio — Text to Speech, Perfected</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner container">
+      <a href="#" class="nav-logo">
+        <span class="logo-icon">&#9654;</span> TTS2MP3 Studio
+      </a>
+      <div class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#voices">Voices</a>
+        <a href="#formats">Formats</a>
+        <a href="#tools">Tools</a>
+        <a href="#get-started" class="btn btn-sm">Get Started</a>
+      </div>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav-mobile" id="nav-mobile">
+      <a href="#features">Features</a>
+      <a href="#voices">Voices</a>
+      <a href="#formats">Formats</a>
+      <a href="#tools">Tools</a>
+      <a href="#get-started" class="btn">Get Started</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="hero-bg"></div>
+    <div class="container hero-inner">
+      <div class="hero-badge">macOS Desktop App</div>
+      <h1>Text to Speech,<br><span class="gradient-text">Perfected.</span></h1>
+      <p class="hero-sub">
+        Convert documents, ebooks, and text into studio-quality audio with 300+ neural voices.
+        Offline-capable. 7 output formats. One elegant app.
+      </p>
+      <div class="hero-actions">
+        <a href="TTS2MP3-Studio-1.0.0.dmg" class="btn btn-lg">Download Free</a>
+        <a href="#features" class="btn btn-lg btn-outline">See Features</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-num" data-target="300">0</span><span class="stat-plus">+</span>
+          <span class="stat-label">Neural Voices</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num" data-target="50">0</span><span class="stat-plus">+</span>
+          <span class="stat-label">Languages</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num" data-target="7">0</span>
+          <span class="stat-label">Audio Formats</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num" data-target="16">0</span>
+          <span class="stat-label">Quality Presets</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-mockup">
+      <div class="mockup-window">
+        <div class="mockup-titlebar">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+          <span class="mockup-title">TTS2MP3 Studio</span>
+        </div>
+        <div class="mockup-body">
+          <div class="mockup-sidebar">
+            <div class="mockup-search"></div>
+            <div class="mockup-filter-row">
+              <span class="mockup-pill active">All</span>
+              <span class="mockup-pill">Female</span>
+              <span class="mockup-pill">Male</span>
+            </div>
+            <div class="mockup-voice-list">
+              <div class="mockup-voice selected">
+                <span class="voice-icon cloud">&#9729;</span>
+                <div>
+                  <div class="voice-name">Jenny (Neural)</div>
+                  <div class="voice-meta">en-US &middot; Female</div>
+                </div>
+                <span class="voice-fav">&#9733;</span>
+              </div>
+              <div class="mockup-voice">
+                <span class="voice-icon cloud">&#9729;</span>
+                <div>
+                  <div class="voice-name">Guy (Neural)</div>
+                  <div class="voice-meta">en-US &middot; Male</div>
+                </div>
+              </div>
+              <div class="mockup-voice">
+                <span class="voice-icon offline">&#8853;</span>
+                <div>
+                  <div class="voice-name">Samantha</div>
+                  <div class="voice-meta">macOS &middot; Female</div>
+                </div>
+              </div>
+              <div class="mockup-voice">
+                <span class="voice-icon cloud">&#9729;</span>
+                <div>
+                  <div class="voice-name">Aria (Neural)</div>
+                  <div class="voice-meta">en-US &middot; Female</div>
+                </div>
+              </div>
+              <div class="mockup-voice">
+                <span class="voice-icon cloud">&#9729;</span>
+                <div>
+                  <div class="voice-name">Sonia (Neural)</div>
+                  <div class="voice-meta">en-GB &middot; Female</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mockup-main">
+            <div class="mockup-text-area">
+              <div class="mockup-text-line w80"></div>
+              <div class="mockup-text-line w100"></div>
+              <div class="mockup-text-line w90"></div>
+              <div class="mockup-text-line w70"></div>
+              <div class="mockup-text-line w95"></div>
+              <div class="mockup-text-line w60"></div>
+            </div>
+            <div class="mockup-controls">
+              <div class="mockup-format-row">
+                <span class="mockup-tag">MP3</span>
+                <span class="mockup-tag">High Quality</span>
+                <span class="mockup-tag">1.0x Speed</span>
+              </div>
+              <div class="mockup-btn-row">
+                <span class="mockup-play">&#9654;</span>
+                <span class="mockup-convert">Convert to Audio</span>
+              </div>
+              <div class="mockup-progress">
+                <div class="mockup-progress-bar"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Features -->
+  <section class="section" id="features">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Features</span>
+        <h2>Everything you need.<br>Nothing you don't.</h2>
+        <p>A complete text-to-speech studio built for real workflows — from single paragraphs to entire audiobooks.</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card" data-aos>
+          <div class="feature-icon">&#127908;</div>
+          <h3>300+ Neural Voices</h3>
+          <p>Access Microsoft Edge neural voices across 50+ languages. Preview any voice instantly with your current settings.</p>
+        </div>
+        <div class="feature-card" data-aos>
+          <div class="feature-icon">&#128268;</div>
+          <h3>Works Offline</h3>
+          <p>All macOS system voices available with zero internet. Automatic fallback ensures your work never stops.</p>
+        </div>
+        <div class="feature-card" data-aos>
+          <div class="feature-icon">&#128218;</div>
+          <h3>Read Anything</h3>
+          <p>Load TXT, RTF, EPUB, PDF, and Markdown files. OCR fallback handles image-based PDFs automatically.</p>
+        </div>
+        <div class="feature-card" data-aos>
+          <div class="feature-icon">&#127911;</div>
+          <h3>7 Audio Formats</h3>
+          <p>Export as MP3, WAV, FLAC, AAC, M4B, OGG Vorbis, or Opus — with 16 quality presets to match your needs.</p>
+        </div>
+        <div class="feature-card" data-aos>
+          <div class="feature-icon">&#128736;</div>
+          <h3>Smart Text Processing</h3>
+          <p>Auto-expands "$1,200" to natural language, strips PDF artifacts, normalizes audio levels, and more.</p>
+        </div>
+        <div class="feature-card" data-aos>
+          <div class="feature-icon">&#9889;</div>
+          <h3>Instant Cache</h3>
+          <p>SHA-256 content-addressed caching means repeated conversions are instant. No wasted time or bandwidth.</p>
+        </div>
+        <div class="feature-card" data-aos>
+          <div class="feature-icon">&#128214;</div>
+          <h3>Audiobook Builder</h3>
+          <p>Create M4B audiobooks with chapter markers, cover art, and full metadata — directly from EPUB files.</p>
+        </div>
+        <div class="feature-card" data-aos>
+          <div class="feature-icon">&#128101;</div>
+          <h3>Character Voices</h3>
+          <p>Assign different voices to dialogue characters. Detect "CHARACTER:" patterns and export merged multi-voice audio.</p>
+        </div>
+        <div class="feature-card" data-aos>
+          <div class="feature-icon">&#128231;</div>
+          <h3>Podcast RSS</h3>
+          <p>Generate valid RSS 2.0 and iTunes-compatible feeds from your audio files. Publish your own podcast in seconds.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Voices -->
+  <section class="section section-dark" id="voices">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Voices</span>
+        <h2>Find your perfect voice.<br>Then favorite it.</h2>
+        <p>Browse, search, filter, preview, and compare — all before converting a single word.</p>
+      </div>
+      <div class="voice-showcase">
+        <div class="voice-demo-panel">
+          <div class="voice-demo-card">
+            <div class="voice-demo-header">
+              <span class="voice-type cloud-badge">&#9729; Cloud</span>
+              <span class="voice-type offline-badge">&#8853; Offline</span>
+            </div>
+            <h3>Two voice engines, one seamless experience</h3>
+            <p>Cloud voices deliver studio-quality neural speech. Offline voices use macOS system synthesis for zero-dependency reliability. Switch between them freely — or let the app decide automatically.</p>
+            <ul class="check-list">
+              <li>Live preview with current speed, pitch, and volume</li>
+              <li>Compare up to 6 voices side-by-side</li>
+              <li>One-click favorites with offline caching</li>
+              <li>Filter by language, gender, or search by name</li>
+              <li>Staff-curated quick picks for fast selection</li>
+            </ul>
+          </div>
+        </div>
+        <div class="voice-wave-panel">
+          <div class="waveform" id="waveform">
+            <div class="wave-bars">
+              <!-- Generated by JS -->
+            </div>
+            <div class="wave-label">Voice Preview</div>
+          </div>
+          <div class="voice-tags">
+            <span class="vtag">English (US)</span>
+            <span class="vtag">English (UK)</span>
+            <span class="vtag">Spanish</span>
+            <span class="vtag">French</span>
+            <span class="vtag">German</span>
+            <span class="vtag">Japanese</span>
+            <span class="vtag">Korean</span>
+            <span class="vtag">Chinese</span>
+            <span class="vtag">Portuguese</span>
+            <span class="vtag">Italian</span>
+            <span class="vtag">Arabic</span>
+            <span class="vtag">Hindi</span>
+            <span class="vtag">Dutch</span>
+            <span class="vtag">Swedish</span>
+            <span class="vtag">50+ more</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Formats -->
+  <section class="section" id="formats">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Formats</span>
+        <h2>Any input. Any output.</h2>
+        <p>From a pasted paragraph to a 500-page PDF — in, processed, and out as perfect audio.</p>
+      </div>
+      <div class="formats-flow">
+        <div class="format-col">
+          <h3>Input</h3>
+          <div class="format-list">
+            <div class="format-item"><span class="format-ext">.txt</span> Plain Text</div>
+            <div class="format-item"><span class="format-ext">.rtf</span> Rich Text</div>
+            <div class="format-item"><span class="format-ext">.epub</span> Ebooks</div>
+            <div class="format-item"><span class="format-ext">.pdf</span> Documents</div>
+            <div class="format-item"><span class="format-ext">.md</span> Markdown</div>
+            <div class="format-item"><span class="format-ext">&#128203;</span> Clipboard</div>
+          </div>
+        </div>
+        <div class="format-arrow">
+          <div class="arrow-line"></div>
+          <div class="arrow-process">
+            <div class="process-step">Parse &amp; Extract</div>
+            <div class="process-step">Normalize Text</div>
+            <div class="process-step">Apply Dictionary</div>
+            <div class="process-step">Chunked Synthesis</div>
+            <div class="process-step">Concatenate &amp; Format</div>
+          </div>
+          <div class="arrow-line"></div>
+        </div>
+        <div class="format-col">
+          <h3>Output</h3>
+          <div class="format-list">
+            <div class="format-item"><span class="format-ext">.mp3</span> 128k / 192k / 320k</div>
+            <div class="format-item"><span class="format-ext">.wav</span> Uncompressed PCM</div>
+            <div class="format-item"><span class="format-ext">.flac</span> Lossless</div>
+            <div class="format-item"><span class="format-ext">.aac</span> 128k / 192k</div>
+            <div class="format-item"><span class="format-ext">.m4b</span> Audiobook + Chapters</div>
+            <div class="format-item"><span class="format-ext">.ogg</span> Vorbis q4 / q7</div>
+            <div class="format-item"><span class="format-ext">.opus</span> 96k / 128k / 192k</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tools -->
+  <section class="section section-dark" id="tools">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Workflow</span>
+        <h2>Built for real work.</h2>
+        <p>Batch processing, watch folders, project files, and keyboard shortcuts — because productivity matters.</p>
+      </div>
+      <div class="tools-grid">
+        <div class="tool-card tool-wide" data-aos>
+          <div class="tool-card-inner">
+            <h3>Batch Conversion</h3>
+            <p>Queue multiple documents and convert them all. Per-file progress tracking, custom output folders, and selective conversion. Walk away and come back to finished audio.</p>
+            <div class="tool-visual">
+              <div class="batch-item">
+                <span class="batch-name">chapter-01.epub</span>
+                <div class="batch-bar"><div class="batch-fill" style="width:100%"></div></div>
+                <span class="batch-status done">&#10003;</span>
+              </div>
+              <div class="batch-item">
+                <span class="batch-name">chapter-02.epub</span>
+                <div class="batch-bar"><div class="batch-fill" style="width:100%"></div></div>
+                <span class="batch-status done">&#10003;</span>
+              </div>
+              <div class="batch-item">
+                <span class="batch-name">chapter-03.epub</span>
+                <div class="batch-bar"><div class="batch-fill" style="width:67%"></div></div>
+                <span class="batch-status active">67%</span>
+              </div>
+              <div class="batch-item">
+                <span class="batch-name">chapter-04.epub</span>
+                <div class="batch-bar"><div class="batch-fill" style="width:0%"></div></div>
+                <span class="batch-status">Queued</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tool-card" data-aos>
+          <div class="tool-card-inner">
+            <h3>Watch Folder</h3>
+            <p>Drop files into a folder and they convert automatically. A background daemon monitors for new files and processes them with your current voice and settings.</p>
+          </div>
+        </div>
+        <div class="tool-card" data-aos>
+          <div class="tool-card-inner">
+            <h3>Project Files</h3>
+            <p>Save your entire session — text, voice, settings, output path — as a <code>.tts2mp3</code> project file. Restore it anytime with a single click.</p>
+          </div>
+        </div>
+        <div class="tool-card" data-aos>
+          <div class="tool-card-inner">
+            <h3>Pronunciation Dictionary</h3>
+            <p>Define custom find-and-replace rules applied before synthesis. Make "TTS" read as "T T S" or "Dr." read as "Doctor" — every time.</p>
+          </div>
+        </div>
+        <div class="tool-card" data-aos>
+          <div class="tool-card-inner">
+            <h3>Keyboard Shortcuts</h3>
+            <p>Full macOS keyboard integration. <kbd>&#8984;R</kbd> to convert, <kbd>&#8984;S</kbd> to save, <kbd>&#8984;H</kbd> to find &amp; replace, and many more.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Processing -->
+  <section class="section" id="processing">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Intelligence</span>
+        <h2>Smarter than raw TTS.</h2>
+        <p>Text normalization, artifact cleanup, and audio processing that makes every conversion sound natural.</p>
+      </div>
+      <div class="processing-demos">
+        <div class="process-demo" data-aos>
+          <h4>Text Normalization</h4>
+          <div class="before-after">
+            <div class="before">
+              <span class="ba-label">Before</span>
+              <code>The total was $1,200 — a 75% increase over the 2024-01-15 figure.</code>
+            </div>
+            <div class="after">
+              <span class="ba-label">After</span>
+              <code>The total was one thousand two hundred dollars — a seventy-five percent increase over the January fifteenth, twenty twenty-four figure.</code>
+            </div>
+          </div>
+        </div>
+        <div class="process-demo" data-aos>
+          <h4>PDF Artifact Cleanup</h4>
+          <div class="before-after">
+            <div class="before">
+              <span class="ba-label">Before</span>
+              <code>great adven-<br>ture through the<br><br>— 42 —<br><br>Chapter 3: The Journey</code>
+            </div>
+            <div class="after">
+              <span class="ba-label">After</span>
+              <code>great adventure through the<br><br>Chapter 3: The Journey</code>
+            </div>
+          </div>
+        </div>
+        <div class="process-demo" data-aos>
+          <h4>Audio Normalization</h4>
+          <div class="norm-visual">
+            <div class="norm-row">
+              <span class="norm-label">Raw</span>
+              <div class="norm-bars raw">
+                <span style="height:90%"></span><span style="height:20%"></span><span style="height:85%"></span>
+                <span style="height:15%"></span><span style="height:95%"></span><span style="height:30%"></span>
+                <span style="height:80%"></span><span style="height:10%"></span>
+              </div>
+            </div>
+            <div class="norm-row">
+              <span class="norm-label">Normalized</span>
+              <div class="norm-bars normalized">
+                <span style="height:65%"></span><span style="height:55%"></span><span style="height:70%"></span>
+                <span style="height:50%"></span><span style="height:68%"></span><span style="height:58%"></span>
+                <span style="height:63%"></span><span style="height:52%"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reliability -->
+  <section class="section section-dark" id="reliability">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Reliability</span>
+        <h2>Built to never fail.</h2>
+      </div>
+      <div class="reliability-grid">
+        <div class="rel-card" data-aos>
+          <div class="rel-icon">&#128260;</div>
+          <h4>Per-Chunk Retry</h4>
+          <p>Each text chunk retries up to 3 times with exponential backoff. If a later chunk fails, partial output is preserved.</p>
+        </div>
+        <div class="rel-card" data-aos>
+          <div class="rel-icon">&#127760;</div>
+          <h4>Offline Fallback</h4>
+          <p>Network drops mid-conversion? macOS voices take over automatically. No lost work, no restarts.</p>
+        </div>
+        <div class="rel-card" data-aos>
+          <div class="rel-icon">&#128190;</div>
+          <h4>Content Cache</h4>
+          <p>SHA-256 keyed cache means identical text + voice + settings = instant result. No redundant API calls.</p>
+        </div>
+        <div class="rel-card" data-aos>
+          <div class="rel-icon">&#9986;</div>
+          <h4>Smart Chunking</h4>
+          <p>Text splits at paragraph and sentence boundaries — never mid-word. Configurable pauses between paragraphs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section cta-section" id="get-started">
+    <div class="container">
+      <div class="cta-card">
+        <h2>Ready to turn text into audio?</h2>
+        <p>TTS2MP3 Studio is free and runs entirely on your Mac. No accounts, no subscriptions, no cloud lock-in. Just download, drag to Applications, and go.</p>
+        <div class="cta-download">
+          <a href="TTS2MP3-Studio-1.0.0.dmg" class="btn btn-lg btn-download" id="download-btn">
+            <span class="download-icon">&#8681;</span> Download for macOS
+          </a>
+          <span class="download-meta">Version 1.0.0 &middot; 33 MB &middot; macOS 10.15+</span>
+        </div>
+        <div class="cta-reqs">
+          <span class="req">macOS 10.15+</span>
+          <span class="req">Intel &amp; Apple Silicon</span>
+          <span class="req">ffmpeg (optional, for advanced formats)</span>
+        </div>
+        <div class="cta-steps">
+          <div class="install-step">
+            <span class="step-num">1</span>
+            <div>
+              <strong>Download</strong>
+              <p>Click the button above to download the DMG installer.</p>
+            </div>
+          </div>
+          <div class="install-step">
+            <span class="step-num">2</span>
+            <div>
+              <strong>Install</strong>
+              <p>Open the DMG and drag TTS2MP3 Studio to your Applications folder.</p>
+            </div>
+          </div>
+          <div class="install-step">
+            <span class="step-num">3</span>
+            <div>
+              <strong>Launch</strong>
+              <p>Open TTS2MP3 Studio from Applications and start converting text to audio.</p>
+            </div>
+          </div>
+        </div>
+        <div class="cta-alt">
+          <p class="alt-label">Or try it in your browser:</p>
+          <a href="/app/" class="btn btn-outline">Open Web App</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="logo-icon">&#9654;</span> TTS2MP3 Studio
+      </div>
+      <div class="footer-links">
+        <a href="#features">Features</a>
+        <a href="#voices">Voices</a>
+        <a href="#formats">Formats</a>
+        <a href="#tools">Tools</a>
+      </div>
+      <div class="footer-copy">
+        Built with Python &amp; Tkinter. Made for macOS.
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

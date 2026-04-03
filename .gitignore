@@ -20,10 +20,15 @@ __pycache__/
 venv/
 *.egg-info/
 dist/
-build/
+build/pyinstaller-work/
+build/*.icns
+build/*.png
 
 # Claude Code
 .claude/
+
+# Binaries
+*.dmg
 
 # macOS
 .DS_Store

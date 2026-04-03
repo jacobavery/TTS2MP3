@@ -1,0 +1,8 @@
+edge-tts
+PyMuPDF
+ebooklib
+beautifulsoup4
+striprtf
+fastapi
+uvicorn[standard]
+python-multipart
